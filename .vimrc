@@ -24,4 +24,19 @@ set hlsearch                " Highlight search matches
 set laststatus=2      " Tells Vim to ALWAYS show the status line
 set statusline=\ %F\  " Tells the status line to show the Full file path
 
+" --- Autocomplete Setup ---
+set completeopt=menu,menuone,noselect
+
+" These three mappings cover every way a Mac Terminal sends Ctrl+Space
+inoremap <C-Space> <C-n>
+inoremap <C-@> <C-n>
+inoremap <Nul> <C-n>
+
+" These make the arrow keys work ONLY when the menu is visible
+inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>   pumvisible() ? "\<C-p>" : "\<Up>"
+
+" Use Enter to confirm the selection from the menu
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
 nnoremap <leader>r :ReplaceAll
