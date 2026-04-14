@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/gabinrivault/42/Projects/Libft'
+let g:netrw_dirhist_3='/Users/gabinrivault/42/Projects/Pipex/Utils'
+let g:netrw_dirhist_2='/Users/gabinrivault/42/Projects/Pipex'
+let g:netrw_dirhist_1='/Users/gabinrivault/42/Projects/Push_swap/Utils'
