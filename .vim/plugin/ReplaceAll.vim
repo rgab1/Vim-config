@@ -9,7 +9,7 @@ command! -nargs=+ -bang ReplaceAll call s:MassReplace('<bang>', <f-args>)
 " The function catches the bang, then search, then replace
 function! s:MassReplace(bang, search, replace, ...)
     " Default to current file (%) if no path is given
-    let l:pattern = a:0 >= 1 ? a:1 : '%'
+    let l:pattern = a:0 >= 1 ? a:1 : expand('%:p')
     
     " If bang (!) is used, l:confirm is empty. Otherwise, it's 'c'
     let l:confirm = a:bang == '!' ? '' : 'c'
