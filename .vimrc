@@ -15,7 +15,24 @@ set showmatch               " Highlight matching parenthesis/brackets when your 
 set tabstop=4               " A tab is displayed as 4 spaces wide
 set shiftwidth=4            " Indents are 4 spaces wide
 set noexpandtab             " Use real tabs (do NOT convert tabs to spaces)
-set colorcolumn=80
+" --- C-Specific Settings ---
+augroup CFileSettings
+    " Clear any old autocommands so they don't stack up when you source the file
+    autocmd!
+
+    " When the filetype is 'c', set the colorcolumn locally
+    autocmd FileType c setlocal colorcolumn=80
+augroup END
+
+" --- Plugins ---
+call plug#begin('~/.vim/plugged')
+
+" Live Markdown Preview
+" The 'do' command automatically downloads the pre-built binaries it needs
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+call plug#end()
+" ---------------
 
 " --- Searching ---
 set incsearch               " Search as you type

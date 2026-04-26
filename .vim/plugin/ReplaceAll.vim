@@ -13,6 +13,8 @@ function! s:MassReplace(bang, search, replace, ...)
     
     " If bang (!) is used, l:confirm is empty. Otherwise, it's 'c'
     let l:confirm = a:bang == '!' ? '' : 'c'
+
+	let l:silent = a:bang == '!' ? 'silent! ' : ''
     
     try
         execute 'silent vimgrep /' . a:search . '/gj ' . l:pattern
@@ -22,7 +24,7 @@ function! s:MassReplace(bang, search, replace, ...)
     endtry
 
     " Notice we inject l:confirm here instead of a hardcoded 'c'
-    execute 'silent! cfdo %s/' . a:search . '/' . a:replace . '/g' . l:confirm . 'e | update'
+    execute l:silent 'cfdo %s/' . a:search . '/' . a:replace . '/g' . l:confirm . 'e | update'
     cclose
     
     redraw
