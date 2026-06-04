@@ -24,7 +24,7 @@ function! s:MassReplace(bang, search, replace, ...)
     endtry
 
     " Notice we inject l:confirm here instead of a hardcoded 'c'
-    execute l:silent . 'cfdo %s#' . a:search . '/' . a:replace . '/g' . l:confirm . 'e | update'
+	execute l:silent . 'cfdo %s#' . a:search . '#' . a:replace . '#g' . l:confirm . 'e | update'
     cclose
     
     redraw
