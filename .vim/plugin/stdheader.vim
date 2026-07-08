@@ -197,5 +197,5 @@ map <F1> :Stdheader<CR>
 augroup stdheader
 	autocmd!
 	autocmd BufWritePre * call s:update ()
-	autocmd BufReadPost * call s:fix_merge_conflict ()
+	"autocmd BufReadPost * call s:fix_merge_conflict ()
 augroup END
